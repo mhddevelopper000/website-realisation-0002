@@ -13,6 +13,9 @@ export default defineConfig({
     outDir: "out",
     emptyOutDir: true,
     rollupOptions: {
+      input: {
+        main: './index.html',
+      },
       external: [
         '@tanstack/start',
         '@tanstack/start-server-core',
