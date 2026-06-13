@@ -1,0 +1,120 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Crème & Anthracite palette */
+  --background: oklch(0.985 0.005 80);       /* #faf8f5 cream */
+  --foreground: oklch(0.27 0.005 60);        /* #3a3a3a anthracite */
+  --ink: oklch(0.18 0.005 60);               /* deep ink */
+  --sand: oklch(0.62 0.05 60);               /* #8b7355 sand accent */
+
+  --card: oklch(0.985 0.005 80);
+  --card-foreground: oklch(0.27 0.005 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.005 60);
+
+  --primary: oklch(0.27 0.005 60);
+  --primary-foreground: oklch(0.985 0.005 80);
+
+  --secondary: oklch(0.94 0.01 80);          /* #f0ebe3 */
+  --secondary-foreground: oklch(0.27 0.005 60);
+
+  --muted: oklch(0.94 0.01 80);
+  --muted-foreground: oklch(0.5 0.01 60);
+
+  --accent: oklch(0.62 0.05 60);
+  --accent-foreground: oklch(0.985 0.005 80);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.985 0.005 80);
+
+  --border: oklch(0.88 0.01 70);
+  --input: oklch(0.88 0.01 70);
+  --ring: oklch(0.62 0.05 60);
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+}
+
+.dark {
+  --background: oklch(0.15 0.005 60);
+  --foreground: oklch(0.95 0.01 80);
+  --card: oklch(0.18 0.005 60);
+  --card-foreground: oklch(0.95 0.01 80);
+  --primary: oklch(0.95 0.01 80);
+  --primary-foreground: oklch(0.15 0.005 60);
+  --secondary: oklch(0.22 0.005 60);
+  --secondary-foreground: oklch(0.95 0.01 80);
+  --muted: oklch(0.22 0.005 60);
+  --muted-foreground: oklch(0.7 0.01 70);
+  --accent: oklch(0.62 0.05 60);
+  --accent-foreground: oklch(0.15 0.005 60);
+  --border: oklch(0.3 0.005 60);
+  --input: oklch(0.3 0.005 60);
+  --ring: oklch(0.62 0.05 60);
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { border-color: var(--color-border); }
+
+  html { -webkit-font-smoothing: antialiased; }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+}
